@@ -26,7 +26,7 @@
       <ul class="nav navbar-nav">
       
        <ul class="nav navbar-nav navbar-left">
-        <li><a href="#j"> Catalogo</a></li>
+        <li><a href="#"> Catalogo</a></li>
       </ul>
         </li>
         <li class="dropdown">
