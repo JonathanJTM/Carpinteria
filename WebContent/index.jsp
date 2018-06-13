@@ -24,10 +24,10 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-       
-        <li class="dropdown">
-          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Catalogo<span class="caret"></span></a>
-          
+      
+       <ul class="nav navbar-nav navbar-left">
+        <li><a href="#j"> Catalogo</a></li>
+      </ul>
         </li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Productos<span class="caret"></span></a>
