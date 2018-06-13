@@ -72,7 +72,7 @@
 </nav>
   
 <div class="container">
-  Hola
+Aqui va todas las etiquetas a agregar
 </div>
 
 
