@@ -72,7 +72,23 @@
 </nav>
   
 <div class="container">
-Aqui va todas las etiquetas a agregar
+	<label>Nombre del Poducto:</label>
+	<input type="text" name="nombre" placeholder="Nombre de Producto" required="required" class="form-control">
+	<br>
+	<label>Descripcion:</label>
+	<input type="text" name="desc" placeholder="Descripcion de Producto" required="required" class="form-control">
+	<br>
+	<label>Precio de Venta:</label>
+	<input type="text" name="desc" placeholder="Precio de Venta" required="required" class="form-control">
+	<br>
+	<label>Estatus:</label>
+	<input type="text" name="desc" placeholder="Estatus" required="required" class="form-control">
+	<br>
+	<label>Existencia:</label>
+	<input type="text" name="desc" placeholder="Existencias" required="required" class="form-control">
+	<br>
+	<input type="submit" value="Guardar" class="btn btn-info">
+	<input type="button" value="Cancelar" class="btn btn-info">
 </div>
 
 
