@@ -36,8 +36,34 @@
             <li><a href="#">Sala</a></li>
           </ul>
         </li>
+      <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categorias<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Ver categorias</a></li>
+            <li><a href="#">Agregar categoria</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Productos<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Ver productos</a></li>
+            <li><a href="#">Alta Productos</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pedidos<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Ver Pedidos</a></li>
+          </ul>
+        </li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Usuarios<span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Ver Usuarios</a></li>
+            <li><a href="#">Alta Usuarios</a></li>
+          </ul>
+        </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
