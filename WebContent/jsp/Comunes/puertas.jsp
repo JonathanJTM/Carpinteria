@@ -137,7 +137,7 @@
 					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">
 						<a href="work.html">
 							<img src="/Carpinteria/imagenes/Logo1.png" alt="IMAGEN AQUI">
-							<h3 >Cocina 8</h3>
+							<h3 >Puerta 8</h3>
 							<p>Tamaño: Mediano</p>
 						</a>
 					</div>
