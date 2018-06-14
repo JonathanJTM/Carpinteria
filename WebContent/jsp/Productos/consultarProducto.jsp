@@ -20,7 +20,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Carpinteria La Providencia - Alta de Categoria</a>
+      <a class="navbar-brand" href="#">Carpinteria La Providencia</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -72,23 +72,56 @@
 </nav>
   
 <div class="container">
-	<div class="mainbox col-md-6 col-md-offset-2">
-	<div class="panel panel-info ">
-	<div class="panel-heading"><div class="panel-title">Alta de Categoria</div></div>
-	<div class="panel-body">
-	<form class="form-group" action="usuarios?op=e">
-	<label>Nombre de categoria:</label>
-	<input type="text" name="nombre" placeholder="Nombre de Categoria" required="required" class="form-control" value="">
-	<br>
-	<label>Descripcion:</label>
-	<input type="text" name="desc" placeholder="Descripcion" required="required" class="form-control" value="">
-	<br>
-	<input type="submit" value="Guardar" class="btn btn-info">
-	<input type="button" value="Cancelar" class="btn btn-info">
-	</form>
-	</div>
-	</div>
-	</div>
+	<div class="mainbox col-md-11 col-md-offset-0">
+<div class="panel panel-info ">
+<div class="panel-heading"><div class="panel-title">Listado General Productos</div></div>
+<div class="panel-body">
+<div class="form-group">
+<input type="text" name="filtro" 
+placeholder="Busqueda por nombre de categoria" class="form-control">
+</div>
+
+<table class="table table-hover table-bordered">
+<caption>
+<a href="#" class="btn btn-info"><img src="../../images/add.gif" onclick="reenviar('../../Usuarios?op=ap');">Agregar Producto</a>
+</caption>
+
+<tr>
+	<th>Nombre</th>
+	<th>Descripcion</th>
+	<th>Precio de Venta</th>
+	<th>Estatus</th>
+	<th>Categoria</th>
+	<th>Existencia</th>
+	<th>Eliminar</th>
+</tr>
+
+</table>
+<input type="button" value="Regresar" class="btn btn-info">
+</div>
+</div>
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Eliminaci&oacute;n de Registros</h4>
+      </div>
+      <div class="modal-body">
+        <p id="texto"></p>
+        
+      </div>
+      <div class="modal-footer">
+        <div id="boton"></div>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+
+  </div>
+  </div>
 </div>
 
 

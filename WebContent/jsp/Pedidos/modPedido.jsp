@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+YPE html>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -20,7 +20,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Carpinteria La Providencia - Alta de Categoria</a>
+      <a class="navbar-brand" href="#">Carpinteria La Providencia - Editar Pedido</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -74,14 +74,24 @@
 <div class="container">
 	<div class="mainbox col-md-6 col-md-offset-2">
 	<div class="panel panel-info ">
-	<div class="panel-heading"><div class="panel-title">Alta de Categoria</div></div>
+	<div class="panel-heading"><div class="panel-title">Editar Pedido</div></div>
 	<div class="panel-body">
 	<form class="form-group" action="usuarios?op=e">
-	<label>Nombre de categoria:</label>
-	<input type="text" name="nombre" placeholder="Nombre de Categoria" required="required" class="form-control" value="">
+	<label>Producto:</label>
+	<select name="produO" class="form-control">
+		<option value="C1" selected="selected">Cocina 1</option>
+		<option value="R1">Recamara 1</option>
+		<option value="P1">Puerta 1</option>
+	</select>
 	<br>
-	<label>Descripcion:</label>
-	<input type="text" name="desc" placeholder="Descripcion" required="required" class="form-control" value="">
+	<label>Cantidad:</label>
+	<input type="number" name="desc" placeholder="Cantidad" required="required" class="form-control" value="2">
+	<br>
+	<label>Total:</label>
+	<input type="number" name="total" placeholder="Total" required="required" class="form-control" value="17000">
+	<br>
+	<label>Comentarios:</label>
+	<input type="text" name="comentarios" placeholder="Comentarios" required="required" class="form-control" value="Sin comentario.">
 	<br>
 	<input type="submit" value="Guardar" class="btn btn-info">
 	<input type="button" value="Cancelar" class="btn btn-info">

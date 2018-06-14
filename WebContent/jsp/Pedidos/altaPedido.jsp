@@ -20,7 +20,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Carpinteria La Providencia - Alta de Producto</a>
+      <a class="navbar-brand" href="#">Carpinteria La Providencia - Alta de Pedido</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -85,13 +85,13 @@
 	</select>
 	<br>
 	<label>Cantidad:</label>
-	<input type="text" name="desc" placeholder="Descripcion" required="required" class="form-control" value="">
+	<input type="number" name="cant" placeholder="cantidad" required="required" class="form-control" value="">
 	<br>
 	<label>Total:</label>
-	<input type="number" name="pventa" placeholder="Precio de Venta" required="required" class="form-control" value="">
+	<input type="number" name="total" placeholder="Total" required="required" class="form-control" value="">
 	<br>
 	<label>Comentarios:</label>
-	<input type="number" name="pventa" placeholder="Comentarios" required="required" class="form-control" value="">
+	<input type="text" name="coment" placeholder="Comentarios" required="required" class="form-control" value="">
 	<br>
 	<input type="submit" value="Guardar" class="btn btn-info">
 	<input type="button" value="Cancelar" class="btn btn-info">
