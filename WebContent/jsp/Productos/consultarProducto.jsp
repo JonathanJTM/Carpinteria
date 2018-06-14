@@ -20,7 +20,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Carpinteria La Providencia</a>
+      <a class="navbar-brand" href="#">Carpinteria La Providencia - Consultar Producto</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -93,6 +93,7 @@ placeholder="Busqueda por nombre de categoria" class="form-control">
 	<th>Estatus</th>
 	<th>Categoria</th>
 	<th>Existencia</th>
+	<th>Editar</th>
 	<th>Eliminar</th>
 </tr>
 

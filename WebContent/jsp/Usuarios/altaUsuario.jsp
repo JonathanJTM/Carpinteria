@@ -20,7 +20,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Carpinteria La Providencia - Alta de Producto</a>
+      <a class="navbar-brand" href="#">Carpinteria La Providencia - Alta de Usuario</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -77,27 +77,27 @@
 	<div class="panel-heading"><div class="panel-title">Registro de Usuario</div></div>
 	<div class="panel-body">
 	<form class="form-group">
-	<label>Nombre de usuario:</label>
 	
-	<input type="text" name="nombre" placeholder="Nombre de Usuario" required="required" class="form-control">
-	<br>
-	<label>Contrase&ntilde;a</label>
-	<input type="password" name="pwd" placeholder="Contraseña" required="required" class="form-control" oninput="verPwdChange();">
-	<p id="pwd"></p>
-	<label class="checkbox-nline"><input type="checkbox" id="verpwd" class="checbox-inline" onclick="mostrarPwd();"> Ver contraseña</label>
-	<br>
-	<label>Email:</label>
-	<input type="email" name="email" placeholder="Email" required="required" class="form-control">
-	<br>
-	<label>Tipo de usuario:</label><select name="tipo" class="form-control">
-		<option value="E">Cliente</option>
-		<option value="A">Empleado</option>
-		<option value="P">Dueño</option>
-	</select>
-	<br>
-	<!--<input type="submit" value="Guardar" class="btn btn-info">-->
-	<input type="button" value="Guardar" class="btn btn-info" onclick="reenviar('Usuarios?op=pr');"/>
-	<input type="button" value="Cancelar" class="btn btn-info" onclick="reenviar('Usuarios?op=in');"/>
+		<label>Nombre de usuario:</label>
+		<input type="text" name="nombre" placeholder="Nombre de Usuario" required="required" class="form-control" id="nombre">
+		<br>
+		<label>Contrase&ntilde;a</label>
+		<input type="password" name="pwd" placeholder="Contraseña" required="required" class="form-control" oninput="verPwdChange();" >
+		<p id="pwd"></p>
+		<label class="checkbox-nline"><input type="checkbox" id="verpwd" class="checbox-inline" onclick=""> Ver contraseña</label>
+		<br>
+		<label>Email:</label>
+		<input type="email" name="email" placeholder="Email" required="required" class="form-control" id="email">
+		<br>
+		<label>Tipo de usuario:</label><select name="tipo" class="form-control" id="tipouser">
+			<option value="C" >Cliente</option>
+			<option value="E" selected="selected">Empleado</option>
+			<option value="A">Administrador</option>
+		</select>
+		<br>
+		<input type="submit" value="Guardar" class="btn btn-info">
+		<input type="button" value="Cancelar" class="btn btn-info">
+	
 	</form>
 	</div>
 	</div>
