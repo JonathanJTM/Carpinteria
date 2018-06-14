@@ -71,35 +71,16 @@
   </div>
 </nav>
   
-<div class="container">
-	<label>Nombre de Producto:</label>
-	<input type="text" name="nombre" placeholder="Nombre de Producto" required="required" class="form-control" value="Cabecero" id="nombre">
-	<br>
-	<label>Descripcion:</label>
-	<input type="text" name="desc" placeholder="Descripcion" required="required" class="form-control" value="Cabecero de gran tamaño." id="desc">
-	<br>
-	<label>Precio de Venta:</label>
-	<input type="number" name="pventa" placeholder="Precio de Venta" required="required" class="form-control" value="3500" id="pventa">
-	<br>
-	<label>Estatus:</label>
-	<input type="text" name="estatus" placeholder="Estatus" required="required" class="form-control" value="Disponible" id="estatus">
-	<br>
-	<label>Categoria:</label>
-	<select name="categ" class="form-control">
-		<option value="A">Armarios</option>
-		<option value="C">Cabeceros</option>
-		<option value="CO">Cocinas</option>
-	</select>
-	<br>
-	<label>Existencia:</label>
-	<input type="number" name="exist" placeholder="Existencia" required="required" class="form-control" value="4" id="exist">
-	<br>
-	<label>Imagen:</label>
-	<input type="text" name="imgen" placeholder="Subir imagen" required="required" class="form-control" value="" id="imagen">
-	<br>
-	<input type="submit" value="Guardar" class="btn btn-info">
-	<input type="button" value="Cancelar" class="btn btn-info">
-</div>
+<div class="container" >
+
+	<div style="text-align:center" >
+		<h3>Bienvenido al Sistema de Pedidos de Carpinteria la Providencia</h3>
+		<br>
+		<img src="/Carpinteria/imagenes/LogoCarpPro.png" >
+	</div> 
+	
+	</div> 
+<br>
 
 
 </body>
