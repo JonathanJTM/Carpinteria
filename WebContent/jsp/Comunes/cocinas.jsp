@@ -83,8 +83,8 @@
 							<img src="/Carpinteria/imagenes/Logo1.png" alt="IMAGEN AQUI">
 							<h3 >Cocina 1</h3>
 							<p>Tamaño: Grande</p>
+							<p>Precio:</p>
 						</a>
-						
 					</div>
 					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">
 						<a href="work.html">
@@ -102,7 +102,7 @@
 						</a>
 					</div>
 					<div class="clearfix visible-md-block"></div>
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">
 						<a href="work.html">
 							<img src="/Carpinteria/imagenes/Logo1.png" alt="IMAGEN AQUI">
 							<h3 >Cocina 4</h3>
@@ -110,14 +110,14 @@
 						</a>
 					</div>
 					<div class="clearfix visible-sm-block"></div>
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">
 						<a href="work.html">
 							<img src="/Carpinteria/imagenes/Logo1.png" alt="IMAGEN AQUI">
 							<h3 >Cocina 5</h3>
 							<p>Tamaño: Grande</p>
 						</a>
 					</div>
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">
 						<a href="work.html">
 							<img src="/Carpinteria/imagenes/Logo1.png" alt="IMAGEN AQUI">
 							<h3 >Cocina 6</h3>
@@ -126,14 +126,14 @@
 					</div>
 					<div class="clearfix visible-md-block visible-sm-block"></div>
 
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">
 						<a href="work.html">
 							<img src="/Carpinteria/imagenes/Logo1.png" alt="IMAGEN AQUI">
 							<h3 >Cocina 7</h3>
 							<p>Tamaño: Grande</p>
 						</a>
 					</div>
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12 work-item">
+					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">
 						<a href="work.html">
 							<img src="/Carpinteria/imagenes/Logo1.png" alt="IMAGEN AQUI">
 							<h3 >Cocina 8</h3>
