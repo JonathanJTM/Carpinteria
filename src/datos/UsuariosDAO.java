@@ -9,8 +9,8 @@ import ObjetosTablas.Usuarios;
 public class UsuariosDAO {
 
 	public Usuarios validar(String user, String pwd) {
-		String sql="select * "
-				+ "from usuarios where nombre=? and clave=?";
+		String sql="select id,Nombre,Apellidos,Email,Email,Tel,Dir,User,Pass,Tipo "
+				+ "from usuario where User=? and Pass=?";
 		Usuarios u=new Usuarios();
 		try{
 			ConexionBD cn=new ConexionBD();
@@ -24,9 +24,9 @@ public class UsuariosDAO {
 				u.setApellidos(rs.getString("Apellidos"));
 				u.setEmail(rs.getString("Email"));
 				u.setTelefono(rs.getString("Tel"));
-				u.setTelefono(rs.getString("Di"));
-				u.setTelefono(rs.getString("User"));
-				u.setTelefono(rs.getString("Pass"));
+				u.setDireccion(rs.getString("Dir"));
+				u.setUser(rs.getString("User"));
+				u.setPass(rs.getString("Pass"));
 				u.setTipo(rs.getString("Tipo"));
 			}
 			ps.close();

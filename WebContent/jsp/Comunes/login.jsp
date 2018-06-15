@@ -54,15 +54,15 @@
 	<div class="panel-heading"><div class="panel-title">Login</div></div>
 	<div class="panel-body">
 	
-	<form class="form-group" method="post" action="Acceso?op=p">
+	<form class="form-group" method="post" action="acceso?op=i">
 	
 		
 		<label>Usuario:</label>
 		<input type="text" name="user" placeholder="Usuario" required="required" class="form-control" id="user">
 		<br>
 		<label>Contrase&ntilde;a</label>
-		<input type="password" name="pwd" placeholder="Contraseña" required="required" class="form-control" oninput="verPwdChange();" >
-		<p id="pwd"></p>
+		<input type="password" id="pwd" name="pwd" placeholder="Contraseña" required="required" class="form-control" oninput="verPwdChange();" >
+		<p id="pwd1"></p>
 		<label class="checkbox-nline"><input type="checkbox" id="verpwd" class="checbox-inline" onclick=""> Ver contraseña</label>
 		<br>
 		<input type="submit" value="Iniciar Sesion" class="btn btn-info">

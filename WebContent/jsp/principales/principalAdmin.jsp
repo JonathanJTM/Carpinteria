@@ -78,7 +78,7 @@
 </nav>
   
 <div class="container">
-  Hola
+
 </div>
 
 

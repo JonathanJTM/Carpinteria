@@ -17,7 +17,7 @@ import ObjetosTablas.Usuarios;
 /**
  * Servlet implementation class Acceso
  */
-@WebServlet("/acceso")
+@WebServlet(name="acceso", urlPatterns="/acceso")
 public class Acceso extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
@@ -35,26 +35,33 @@ public class Acceso extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String op=request.getParameter("op");
-		RequestDispatcher rd=request.getRequestDispatcher("jsp/principales/principalAdmin.jsp");
+		RequestDispatcher rd=null;
 		switch(op){
 			case "i":
-				System.out.println("Hola");
-				String user=request.getParameter("username");
-				String pwd=request.getParameter("password");
+				String user=request.getParameter("user");
+				String pwd=request.getParameter("pwd");
 				UsuariosDAO udao=new UsuariosDAO();
 				Usuarios u=udao.validar(user, pwd);
+				
 				if(u.getNombre()==null){
-					rd=request.getRequestDispatcher("jsp/Comunes/error.jsp");
+					rd=request.getRequestDispatcher("jsp/Comunes/login.jsp");
 				}
 				else{
 					HttpSession sesion=request.getSession();
 					sesion.setAttribute("usuario",u);
 					sesion.setMaxInactiveInterval(10*60);
+					if(u.getTipo().equals("a")){
+						rd=request.getRequestDispatcher("jsp/principales/principalAdmin.jsp");
+					}else{
+						rd=request.getRequestDispatcher("jsp/principales/principalUsuario.jsp");
+					}
 				}
+				
 				break;
-			case "p":
-				rd=request.getRequestDispatcher("jsp/principales/principalAdmin.jsp");
-				break;
+			case "l":
+			rd=request.getRequestDispatcher("jsp/Comunes/login.jsp");
+			break;
+			
 			
 		}
 		rd.forward(request, response);

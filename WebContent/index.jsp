@@ -7,10 +7,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/Carpinteria/js/Global.js"></script>
   <meta http-equiv="refresh"
 	content="<%=session.getMaxInactiveInterval()%>; URL=/Carpinteria/timeout.html" />
 </head>
-<body>
+<body onload="crearCategorias()">
 
 
 <nav class="navbar navbar-inverse">
@@ -23,31 +24,24 @@
       </button>
       <a class="navbar-brand" href="#">Carpinteria La Providencia</a>
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
+    <div class="collapse navbar-collapse">
+    
       <ul class="nav navbar-nav">
-           
        <li class="dropdown">
           <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Catalogo<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li ><a href="#">Todo</a></li>
-            <li><a href="#">Cocina</a></li>
-            <li><a href="#">Recamaras</a></li>
-            <li><a href="#">Puertas</a></li>
-            <li><a href="#">Sala</a></li>
-          </ul>
+            <ul class="dropdown-menu" id="cats" name="cats"></ul>
         </li>
       </ul>
-      
       <ul class="nav navbar-nav navbar-right">
         <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="jsp/Comunes/login.jsp"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+        <li><a href="acceso?op=l"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>
 </nav>
   
 <div class="container">
-  Hola
+  
 </div>
 
 
