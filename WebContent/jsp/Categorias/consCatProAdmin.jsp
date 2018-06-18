@@ -7,9 +7,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
+  <script type="text/javascript" src="/Carpinteria/js/Global.js"></script>
 </head>
-<body>
+<body onload="mostrarCategoriaProd('+${id}+');">
 
 
 <nav class="navbar navbar-inverse">
@@ -27,13 +27,7 @@
       
        <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Catalogo<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Todo</a></li>
-            <li><a href="#">Cocina</a></li>
-            <li><a href="#">Recamaras</a></li>
-            <li><a href="#">Puertas</a></li>
-            <li><a href="#">Sala</a></li>
-          </ul>
+          <ul class="dropdown-menu" id="cats"></ul>
         </li>
       <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Categorias<span class="caret"></span></a>
@@ -74,9 +68,9 @@
 <div class="container" >
 
 	<div style="text-align:center" >
-		<h3>Bienvenido al Sistema de Pedidos de Carpinteria la Providencia</h3>
-		<br>
-		<img src="/Carpinteria/imagenes/LogoCarpPro.png" >
+		<div style="text-align:center" id="fh5co-main">
+		<div class="fh5co-narrow-content" id="cargarProd"></div>
+	</div>
 	</div> 
 	
 	</div> 

@@ -7,10 +7,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="/Carpinteria/js/Global.js"></script>
   <meta http-equiv="refresh"
 	content="<%=session.getMaxInactiveInterval()%>; URL=/Carpinteria/timeout.html" />
 </head>
-<body>
+<body onload="crearCategorias()">
 
 
 <nav class="navbar navbar-inverse">
@@ -21,20 +22,14 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Carpinteria La Providencia</a>
+      <a class="navbar-brand" href="">Carpinteria La Providencia</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
            
        <li class="dropdown">
           <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Catalogo<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li ><a href="#">Todo</a></li>
-            <li><a href="#">Cocina</a></li>
-            <li><a href="#">Recamaras</a></li>
-            <li><a href="#">Puertas</a></li>
-            <li><a href="#">Sala</a></li>
-          </ul>
+          <ul class="dropdown-menu" id="cats"></ul>
         </li>
         <li class="dropdown">
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Pedidos<span class="caret"></span></a>
@@ -57,7 +52,13 @@
 </nav>
   
 <div class="container">
-  Hola
+	<div style="text-align:center" >
+		<h3>Bienvenido al Sistema de Pedidos de Carpinteria la Providencia</h3>
+		<br>
+		<img src="/Carpinteria/imagenes/LogoCarpPro.png" >
+	</div> 
+	
+	</div> 
 </div>
 
 

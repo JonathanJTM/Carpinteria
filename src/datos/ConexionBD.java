@@ -6,7 +6,7 @@ import java.sql.SQLException;
 
 public class ConexionBD {
 	Connection cn;
-	String url="jdbc:mysql://localhost:3306/carpinteria";
+	String url="jdbc:mysql://localhost:3306/carpinterialaprovidencia";
 	public ConexionBD() {
 		try{
 			 Class.forName("com.mysql.jdbc.Driver").

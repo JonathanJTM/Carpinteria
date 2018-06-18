@@ -11,7 +11,7 @@
   <meta http-equiv="refresh"
 	content="<%=session.getMaxInactiveInterval()%>; URL=/Carpinteria/timeout.html" />
 </head>
-<body onload="crearCategorias()">
+<body onload="mostrarCategoriaProd('+${id}+');">
 
 
 <nav class="navbar navbar-inverse">
@@ -22,38 +22,33 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" >Carpinteria La Providencia</a>
+      <a class="navbar-brand" href="acceso?op=index">Carpinteria La Providencia</a>
     </div>
-    <div class="collapse navbar-collapse">
-    
+    <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
        <li class="dropdown">
-          <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Catalogo<span class="caret"></span></a>
-            <ul class="dropdown-menu" id="cats" name="cats"></ul>
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Catalogo<span class="caret"></span></a>
+          <ul class="dropdown-menu" id="cats"></ul>
         </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="acceso?op=cn"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+          <li><a href="acceso?op=cn"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
         <li><a href="acceso?op=l"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>
 </nav>
   
-<div class="container">
-  	<div style="text-align:center" >
-		<h3>Bienvenido al Sistema de Pedidos de Carpinteria la Providencia</h3>
-		<br>
-		<img src="/Carpinteria/imagenes/LogoCarpPro.png" >
-	</div>  
+<div class="container" >
+
+	<div style="text-align:center" >
+		<div style="text-align:center" id="fh5co-main">
+		<div class="fh5co-narrow-content" id="cargarProd"></div>
+	</div>
+	</div> 
 	
 	</div> 
-</div>
-<form >
-<input type="button" value="Guardar" class="btn btn-info" onclick="reenviar('acceso?op=np');">
-<input type="button" value="Mostrar imagen" class="btn btn-info" onclick="reenviar('acceso?op=mp');">
-
-</form>
+<br>
 
 
 </body>

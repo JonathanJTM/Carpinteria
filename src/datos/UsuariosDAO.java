@@ -38,5 +38,29 @@ public class UsuariosDAO {
 		}
 		return u;
 	}
+	public boolean insertar(Usuarios u){
+		String query="insert into usuario values(null,?,?,?,?,?,?,?,?)";
+		boolean ban=false;
+		try{
+			ConexionBD con=new ConexionBD();
+			PreparedStatement ps=con.getCn().prepareStatement(query);
+			ps.setString(1, u.getNombre());
+			ps.setString(2, u.getApellidos());
+			ps.setString(3, u.getEmail());
+			ps.setString(4, u.getTelefono());
+			ps.setString(5, u.getDireccion());
+			ps.setString(6, u.getUser());
+			ps.setString(7, u.getPass());
+			ps.setString(8, u.getTipo());
+			ps.execute();
+			ps.close();
+			con.cerrar();
+			ban=true;
+		}
+		catch(SQLException e){
+			System.out.println("Error:"+e.getMessage());
+		}
+		return ban;
+	}
 
 }

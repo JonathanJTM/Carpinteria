@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,7 +20,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" href="#">Carpinteria La Providencia</a>
+      <a class="navbar-brand" href="#">Carpinteria La Providencia - Consultar Producto</a>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -72,92 +71,60 @@
   </div>
 </nav>
   
-<div class="container" >
+<div class="container">
+	<div class="mainbox col-md-11 col-md-offset-0">
+<div class="panel panel-info ">
+<div class="panel-heading"><div class="panel-title">Listado General Productos</div></div>
+<div class="panel-body">
+<div class="form-group">
+<input type="text" name="filtro" 
+placeholder="Busqueda por nombre de categoria" class="form-control">
+</div>
 
-	<div style="text-align:center" >
-		<div style="text-align:center" id="fh5co-main">
-		<div class="fh5co-narrow-content">
-				<h1><span>Puertas</span></h1>
-				
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">
-						<a href="work.html">
-							<img src="/Carpinteria/imagenes/Logo1.png" alt="IMAGEN AQUI">
-							<h3 >Puerta 1</h3>
-							<p>Tamaño: Grande</p>
-							<p>Precio:</p>
-						</a>
-					</div>
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">
-						<a href="work.html">
-							<img src="/Carpinteria/imagenes/Logo1.png" alt="IMAGEN AQUI">
-							<h3 >Puerta 2</h3>
-							<p>Tamaño: Mediano</p>
-						</a>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">
-						<a href="work.html">
-							<img src="/Carpinteria/imagenes/Logo1.png" alt="IMAGEN AQUI">
-							<h3 >Puerta 3</h3>
-							<p>Tamaño: Pequeño</p>
-						</a>
-					</div>
-					<div class="clearfix visible-md-block"></div>
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">
-						<a href="work.html">
-							<img src="/Carpinteria/imagenes/Logo1.png" alt="IMAGEN AQUI">
-							<h3 >Puerta 4</h3>
-							<p>Tamaño: Grande</p>
-						</a>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">
-						<a href="work.html">
-							<img src="/Carpinteria/imagenes/Logo1.png" alt="IMAGEN AQUI">
-							<h3 >Puerta 5</h3>
-							<p>Tamaño: Grande</p>
-						</a>
-					</div>
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">
-						<a href="work.html">
-							<img src="/Carpinteria/imagenes/Logo1.png" alt="IMAGEN AQUI">
-							<h3 >Puerta 6</h3>
-							<p>Tamaño: Mediano</p>
-						</a>
-					</div>
-					<div class="clearfix visible-md-block visible-sm-block"></div>
+<table class="table table-hover table-bordered">
+<caption>
+<a href="#" class="btn btn-info"><img src="../../images/add.gif" onclick="reenviar('../../Usuarios?op=ap');">Agregar Producto</a>
+</caption>
 
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">
-						<a href="work.html">
-							<img src="/Carpinteria/imagenes/Logo1.png" alt="IMAGEN AQUI">
-							<h3 >Puerta 7</h3>
-							<p>Tamaño: Grande</p>
-						</a>
-					</div>
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">
-						<a href="work.html">
-							<img src="/Carpinteria/imagenes/Logo1.png" alt="IMAGEN AQUI">
-							<h3 >Puerta 8</h3>
-							<p>Tamaño: Mediano</p>
-						</a>
-					</div>
-					<div class="clearfix visible-sm-block"></div>
-					<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">
-						<a href="work.html">
-							<img src="/Carpinteria/imagenes/Logo1.png" alt="IMAGEN AQUI">
-							<h3 >Puerta 9</h3>
-							<p>Tamaño: Grande</p>
-						</a>
-					</div>
-					<div class="clearfix visible-md-block"></div>
-					
-				
-			</div>
-	</div>
-	</div> 
-	
-	</div> 
-<br>
+<tr>
+	<th>Nombre</th>
+	<th>Descripcion</th>
+	<th>Precio de Venta</th>
+	<th>Estatus</th>
+	<th>Categoria</th>
+	<th>Existencia</th>
+	<th>Editar</th>
+	<th>Eliminar</th>
+</tr>
+
+</table>
+<input type="button" value="Regresar" class="btn btn-info">
+</div>
+</div>
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Eliminaci&oacute;n de Registros</h4>
+      </div>
+      <div class="modal-body">
+        <p id="texto"></p>
+        
+      </div>
+      <div class="modal-footer">
+        <div id="boton"></div>
+        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</div>
+
 
 </body>
 </html>

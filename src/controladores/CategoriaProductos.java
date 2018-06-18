@@ -1,7 +1,7 @@
 package controladores;
 
-
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -9,23 +9,20 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-import datos.UsuariosDAO;
 import datos.productosDAO;
-import ObjetosTablas.Usuarios;
 
 /**
- * Servlet implementation class Acceso
+ * Servlet implementation class Categoria
  */
-@WebServlet(name="acceso", urlPatterns="/acceso")
-public class Acceso extends HttpServlet {
+@WebServlet(name="CategoriaProductos",urlPatterns="/CategoriaProductos")
+public class CategoriaProductos extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public Acceso() {
+    public CategoriaProductos() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -34,39 +31,33 @@ public class Acceso extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
 		String op=request.getParameter("op");
-		RequestDispatcher rd=null;
+		
 		switch(op){
-			case "l":
-			rd=request.getRequestDispatcher("jsp/Usuarios/login.jsp");
-			break;
-			case "index":
-				rd=request.getRequestDispatcher("/index.jsp");
-				break;
-			case "cn":
-				rd=request.getRequestDispatcher("jsp/Usuarios/signIn.jsp");
-				break;
-			case "np":
-				rd=request.getRequestDispatcher("jsp/Usuarios/inputFile.jsp");
-				break;
-			case "mp":
+			case "cp":
 				productosDAO pdao=new productosDAO();
-				String img=pdao.consultaIndividual(1);
-				rd=request.getRequestDispatcher("jsp/Usuarios/outputFile.jsp");
-				request.setAttribute("imagen", img);
+				int idCat=Integer.parseInt(request.getParameter("id").toString().trim());
+				String json=pdao.consultaIndividual(idCat);
+				PrintWriter out=response.getWriter();
+				response.setContentType("application/json");
+				out.println(json);
+				out.close();
 				break;
-
-			
+			case "c":
+					int id=Integer.parseInt(request.getParameter("id"));
+					RequestDispatcher rd=null;
+					request.setAttribute("id", id);
+					rd=request.getRequestDispatcher("jsp/Categorias/consCatPro.jsp");	
+					rd.forward(request, response);
+					break;
 		}
-		rd.forward(request, response);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

@@ -8,10 +8,11 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
   <script type="text/javascript" src="/Carpinteria/js/Global.js"></script>
-  <meta http-equiv="refresh"
+ <meta http-equiv="refresh"
 	content="<%=session.getMaxInactiveInterval()%>; URL=/Carpinteria/timeout.html" />
+
 </head>
-<body onload="crearCategorias()">
+<body>
 
 
 <nav class="navbar navbar-inverse">
@@ -22,38 +23,29 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>                        
       </button>
-      <a class="navbar-brand" >Carpinteria La Providencia</a>
+      <a class="navbar-brand" href="acceso?op=index">Carpinteria La Providencia</a>
     </div>
-    <div class="collapse navbar-collapse">
-    
-      <ul class="nav navbar-nav">
-       <li class="dropdown">
-          <a  class="dropdown-toggle" data-toggle="dropdown" href="#">Catalogo<span class="caret"></span></a>
-            <ul class="dropdown-menu" id="cats" name="cats"></ul>
-        </li>
-      </ul>
+    <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav navbar-right">
         <li><a href="acceso?op=cn"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="acceso?op=l"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
       </ul>
     </div>
   </div>
 </nav>
   
 <div class="container">
-  	<div style="text-align:center" >
-		<h3>Bienvenido al Sistema de Pedidos de Carpinteria la Providencia</h3>
-		<br>
-		<img src="/Carpinteria/imagenes/LogoCarpPro.png" >
-	</div>  
-	
-	</div> 
-</div>
-<form >
-<input type="button" value="Guardar" class="btn btn-info" onclick="reenviar('acceso?op=np');">
-<input type="button" value="Mostrar imagen" class="btn btn-info" onclick="reenviar('acceso?op=mp');">
 
-</form>
+<div class="mainbox col-md-6 col-md-offset-2">
+	<div class="panel panel-info ">
+	<div class="panel-heading"><div class="panel-title">AltaProducto</div></div>
+	<div class="panel-body">
+
+					<img src="data:image/png;base64,${imagen}"  height="42" width="42" />
+	</div>
+	</div>
+	</div>
+
+</div>
 
 
 </body>

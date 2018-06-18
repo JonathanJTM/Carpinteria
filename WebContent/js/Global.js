@@ -1,33 +1,4 @@
-
-
-function eliminarOpcion(id,nombre){
-	$("#textoMostrar").html('¿Estas seguro de eliminar a la opcion '+nombre+'?');
-	$("#boton").html("<input type=\"button\" value=\"Aceptar\" class=\"btn btn-primary\" data-dismiss=\"modal\" " +
-	"onclick=\"borrarOpcion('"+id+"');\">");
-}
-function eliminar(id,nombre,tipo){
-	document.getElementById("texto").innerHTML="¿Estas seguro de eliminar al "+tipo+":"+nombre+" ?";
-	document.getElementById("boton").innerHTML="<input type=\"button\" value=\"Aceptar\" class=\"btn btn-primary\" data-dismiss=\"modal\" " +
-			"onclick=\"borrar('"+id+"');\">";
-			
-}
-
-
-function borrarOpcion(id){
-	var url="Opciones?op=d&idOpcion="+id;
-	reenviar(url);
-}
-function mostrarPwd(){
-	var chb=document.getElementById("verpwd");
-	if(chb.checked){
-		document.getElementById("pwd").innerHTML=
-			document.getElementsByName("pwd")[0].value;
-	}
-	else{
-		document.getElementById("pwd").innerHTML="";
-	}
-	
-}
+/////////carga de categorias con ajax/////////
 function crearCategorias(){
 	var xhttp=new XMLHttpRequest();
 	xhttp.onreadystatechange=function(){
@@ -44,28 +15,98 @@ function mostrarCategorias(respuesta){
 		return;
 	}
 	var lista='<li>';
-	lista+='<a href="#">'+datos[0].Nombre+'</td>';
+	lista+='<a href="CategoriaProductos?op=c&id='+datos[0].id+'">'+datos[0].Nombre+'</td>';
 	lista+='</li>';
 	
 	for(var i=1;i<datos.length;i++){
 		lista+='<li>';
-		lista+='<a href="#">'+datos[i].Nombre+'</td>';
+		lista+='<a href="CategoriaProductos?op=c&id='+datos[i].id+'">'+datos[i].Nombre+'</td>';
 		lista+='</li>';
 	}
 	document.getElementById("cats").innerHTML=lista;
 }
+/////////carga de categorias con ajax/////////
+
 
 
 function verPwdChange(){
 	var chb=document.getElementById("verpwd");
 	if(chb.checked){
-		document.getElementById("pwd").innerHTML=
+		document.getElementById("pwd1").innerHTML=
 			document.getElementsByName("pwd")[0].value;
 	}
 	else{
 		document.getElementById("pwd").innerHTML="";
 	}
 }
+
+
+function reenviar(url){
+	location.href=url;
+}
+/////////carga de categorias con sus productos/////////
+function mostrarCategoriaProd(id){
+	crearCategorias();
+	var xhttp=new XMLHttpRequest();
+	xhttp.onreadystatechange=function(){
+		if(this.readyState==4 && this.status==200){
+			mostrarProductos(this.responseText);
+		}
+	};
+	xhttp.open("POST","CategoriaProductos?op=cp&id="+id, true);
+	xhttp.send();
+}
+function mostrarProductos(respuesta){
+	var datos=eval(respuesta);
+	if(datos.length==0){
+		return;
+	}
+	var jsp='<h1><span>'+datos[0].nomCat+'</span></h1>';
+	    jsp+='<h2><span>'+datos[0].desCat+'</span></h2>';
+					jsp+='<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">';
+					jsp+='<a href="#">';
+					jsp+='<img src="data:image/png;base64,${'+datos[0].ima+'}" />';//height="60" width="60"
+					jsp+='<h3>'+datos[0].nom+'</h3>';
+					jsp+='<p>Precio: $'+datos[0].precio+'</p>';
+					jsp+='</a>';
+					jsp+='</div>';
+					
+	for(var i=1;i<datos.length;i++){
+		jsp+='<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">';
+		jsp+='<a href="#">';
+		jsp+='<img src="data:image/png;base64,${'+datos[i].ima+'}" />';//height="60" width="60"
+		jsp+='<h3>'+datos[i].nom+'</h3>';
+		jsp+='<p>Precio: $'+datos[i].precio+'</p>';
+		jsp+='</a>';
+		jsp+='</div>';
+	}
+	document.getElementById("cargarProd").innerHTML=jsp;
+}
+/////////carga de categorias con sus productos/////////
+
+
+
+
+
+
+
+function eliminarOpcion(id,nombre){
+	$("#textoMostrar").html('¿Estas seguro de eliminar a la opcion '+nombre+'?');
+	$("#boton").html("<input type=\"button\" value=\"Aceptar\" class=\"btn btn-primary\" data-dismiss=\"modal\" " +
+	"onclick=\"borrarOpcion('"+id+"');\">");
+}
+function eliminar(id,nombre,tipo){
+	document.getElementById("texto").innerHTML="¿Estas seguro de eliminar al "+tipo+":"+nombre+" ?";
+	document.getElementById("boton").innerHTML="<input type=\"button\" value=\"Aceptar\" class=\"btn btn-primary\" data-dismiss=\"modal\" " +
+			"onclick=\"borrar('"+id+"');\">";
+			
+}
+
+
+
+
+
+
 function consultaAulas(){
 	var xhttp=new XMLHttpRequest();
 	xhttp.onreadystatechange=function(){
@@ -97,25 +138,7 @@ function generarTablaAulas(datos){
 		document.getElementById("datos").innerHTML=table;
 	}
 }
-function generaHoras(){
-	var hi=document.getElementById("horaInicio");
-	for(var i=8;i<=19;i++){
-		var option=document.createElement("option");
-		var texto=document.createTextNode(i+":00");
-		option.setAttribute("value", i+":00");
-		option.appendChild(texto);
-		hi.appendChild(option);
-	}
-	var hf=document.getElementById("horaFin");
-	for(var i=8;i<=20;i++){
-		var option=document.createElement("option");
-		var texto=document.createTextNode(i+":00");
-		option.setAttribute("value", i+":00");
-		option.appendChild(texto);
-		hf.appendChild(option);
-	}
-	document.getElementById("guardar").disabled=true;
-}
+
 function mostrarAlumnos(){
 	var select=document.getElementById("carrera");
 	if(select.value!=0){

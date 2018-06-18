@@ -15,7 +15,7 @@ public class categoriaDAO {
 	}
 
 	public String consultaGeneral(){
-		String sql="select Nombre "
+		String sql="select id,Nombre "
 				+ "from categoria";
 		JSONArray array=new JSONArray();
 		try{
@@ -24,6 +24,7 @@ public class categoriaDAO {
 			ResultSet rs=sentencia.executeQuery(sql);
 			while(rs.next()){
 				JSONObject json=new JSONObject();
+				json.put("id", rs.getInt("id"));
 				json.put("Nombre", rs.getString("Nombre"));
 				array.add(json);	
 			}
