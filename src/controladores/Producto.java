@@ -48,21 +48,24 @@ public class Producto extends HttpServlet {
 		RequestDispatcher rd=null;
 		productosDAO pdao=new productosDAO();
 		switch(op){
-	case "i":
+	case "altaProducto":
 		 String imageString = null;
 	        ByteArrayOutputStream bos = new ByteArrayOutputStream();
 	        BufferedImage img=ImageIO.read(new File(request.getParameter("file").toString()));
 	        try {
 	            ImageIO.write(img, "png", bos);
 	            byte[] imageBytes = bos.toByteArray();
-
 	            Base64.Encoder encoder = Base64.getEncoder();
 	            imageString=encoder.encodeToString(imageBytes);
 	            bos.close();
 	            Productos p=new Productos();
 	            p.setImagen(imageString);
+	            p.setNombre(request.getParameter("nombre"));
+	            p.setDescripcion(request.getParameter("desc"));
+	            p.setPrecio(request.getParameter("pventa"));
+	            p.setIdCat(Integer.parseInt(request.getParameter("categ").toString()));
 	            pdao.insertar(p);
-	            rd=request.getRequestDispatcher("/index.jsp");
+	            rd=request.getRequestDispatcher("jsp/principales/principalAdmin.jsp");
 	        } catch (IOException e) {
 	            e.printStackTrace();
 	        }

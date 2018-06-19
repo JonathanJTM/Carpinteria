@@ -14,12 +14,18 @@ import ObjetosTablas.Productos;
 
 public class productosDAO {
 	public boolean insertar(Productos p){
-		String query="insert into producto values(null,?)";
+		String query="insert into producto values(null,?,?,?,?,?)";
 		boolean ban=false;
 		try{
 			ConexionBD con=new ConexionBD();
 			PreparedStatement ps=con.getCn().prepareStatement(query);
-			ps.setString(1, p.getImagen());
+			
+			ps.setString(1, p.getNombre());
+			ps.setString(2, p.getDescripcion());
+			ps.setString(3, p.getPrecio());
+			ps.setInt(4, p.getIdCat());
+			ps.setString(5, p.getImagen());
+			
 			ps.execute();
 			ps.close();
 			con.cerrar();
@@ -62,6 +68,29 @@ public class productosDAO {
 					break;
 				}
 				json.put("ima", rs.getString("Imagen"));
+				array.add(json);
+			}
+			ps.close();
+			con.cerrar();
+			
+		}
+		catch(SQLException e){
+			System.out.println("Error:"+e.getMessage());
+		}
+		System.out.println(array.toString());
+		return array.toString();
+	}
+	public String consultaGeneral() {
+		String query="select * from categoria where id<>1";
+		JSONArray array=new JSONArray();
+		try{
+			ConexionBD con=new ConexionBD();
+			PreparedStatement ps=con.getCn().prepareStatement(query);
+			ResultSet rs=ps.executeQuery(query);
+			while (rs.next()) {
+				JSONObject json=new JSONObject();
+				json.put("id", rs.getInt("id"));
+				json.put("nomCat", rs.getString("Nombre"));
 				array.add(json);
 			}
 			ps.close();

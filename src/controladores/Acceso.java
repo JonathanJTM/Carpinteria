@@ -56,7 +56,15 @@ public class Acceso extends HttpServlet {
 				rd=request.getRequestDispatcher("jsp/Usuarios/outputFile.jsp");
 				request.setAttribute("imagen", img);
 				break;
-
+			case "indexA":
+				rd=request.getRequestDispatcher("jsp/principales/principalAdmin.jsp");
+				break;
+			case "indexU":
+				rd=request.getRequestDispatcher("jsp/principales/principalUsuario.jsp");
+				break;
+			case "newProduct":
+				rd=request.getRequestDispatcher("jsp/Productos/altaProducto.jsp");
+				break;
 			
 		}
 		rd.forward(request, response);

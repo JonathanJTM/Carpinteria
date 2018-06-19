@@ -42,7 +42,7 @@
           <a class="dropdown-toggle" data-toggle="dropdown" href="#">Productos<span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="#">Ver productos</a></li>
-            <li><a href="#">Alta Productos</a></li>
+            <li><a href="acceso?op=newProduct">Alta Productos</a></li>
           </ul>
         </li>
         <li class="dropdown">

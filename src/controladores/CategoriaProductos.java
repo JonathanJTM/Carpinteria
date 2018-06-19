@@ -50,6 +50,14 @@ public class CategoriaProductos extends HttpServlet {
 					rd=request.getRequestDispatcher("jsp/Categorias/consCatPro.jsp");	
 					rd.forward(request, response);
 					break;
+			case "cats":
+				pdao=new productosDAO();
+				json=pdao.consultaGeneral();
+				out=response.getWriter();
+				response.setContentType("application/json");
+				out.println(json);
+				out.close();
+				break;
 		}
 	}
 

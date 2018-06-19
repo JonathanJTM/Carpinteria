@@ -65,7 +65,7 @@ function mostrarProductos(respuesta){
 	    jsp+='<h2><span>'+datos[0].desCat+'</span></h2>';
 					jsp+='<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">';
 					jsp+='<a href="#">';
-					jsp+='<img src="data:image/png;base64,${'+datos[0].ima+'}" />';//height="60" width="60"
+					jsp+='<img src="data:image/png;base64,'+datos[0].ima+'" />';//height="60" width="60"
 					jsp+='<h3>'+datos[0].nom+'</h3>';
 					jsp+='<p>Precio: $'+datos[0].precio+'</p>';
 					jsp+='</a>';
@@ -74,7 +74,7 @@ function mostrarProductos(respuesta){
 	for(var i=1;i<datos.length;i++){
 		jsp+='<div class="col-md-4 col-sm-6 col-xs-6 col-xxs-12">';
 		jsp+='<a href="#">';
-		jsp+='<img src="data:image/png;base64,${'+datos[i].ima+'}" />';//height="60" width="60"
+		jsp+='<img src="data:image/png;base64,'+datos[i].ima+'" />';//height="60" width="60"
 		jsp+='<h3>'+datos[i].nom+'</h3>';
 		jsp+='<p>Precio: $'+datos[i].precio+'</p>';
 		jsp+='</a>';
@@ -84,7 +84,30 @@ function mostrarProductos(respuesta){
 }
 /////////carga de categorias con sus productos/////////
 
-
+/////////carga de categorias para alta Producto/////////
+function verComboCats(){
+	var xhttp=new XMLHttpRequest();
+	xhttp.onreadystatechange=function(){
+		if(this.readyState==4 && this.status==200){
+			mostrarCats(this.responseText);
+		}
+	};
+	xhttp.open("POST","CategoriaProductos?op=cats", true);
+	xhttp.send();
+}
+function mostrarCats(respuesta){
+	var datos=eval(respuesta);
+	if(datos.length==0){
+		return;
+	}
+	var jsp='<option value="'+datos[0].id+'">'+datos[0].nomCat+'</option>';
+					
+	for(var i=1;i<datos.length;i++){
+		jsp+='<option value="'+datos[i].id+'">'+datos[i].nomCat+'</option>';
+	}
+	document.getElementById("combo").innerHTML=jsp;
+}
+/////////carga de categorias para alta productos/////////
 
 
 
